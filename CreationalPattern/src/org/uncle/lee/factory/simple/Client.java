@@ -9,12 +9,12 @@ public class Client {
 	}
 
 	private static void showConcreteProduct1(Factory factory) {
-		Product concreteProduct1 = factory.createProductBaseOnType(Factory.CONCRETE_PRODUCT_1);
+		Product concreteProduct1 = factory.createProductByType(Factory.PRODUCT_TYPE_1);
 		concreteProduct1.operate();
 	}
 	
 	private static void showConcreteProduct2(Factory factory) {
-		Product concreateProduct2 = factory.createProductBaseOnType(Factory.CONCRETE_PRODUCT_2);
+		Product concreateProduct2 = factory.createProductByType(Factory.PRODUCT_TYPE_2);
 		concreateProduct2.operate();
 	}
 }
