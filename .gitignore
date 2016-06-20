@@ -1,0 +1,15 @@
+# local metadata
+.metadata
+
+# generated files
+bin/
+
+# files for dex vm
+*.class
+*~
+
+# eclipse setting/classpath files
+.settings/
+*.classpath
+*.project
+*.properties
