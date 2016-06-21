@@ -53,9 +53,9 @@ public class Client {
 	}
 
 	private static void testInstance(List<Callable<Integer>> callableList) throws InterruptedException, ExecutionException {
-		ExecutorService poll = Executors.newFixedThreadPool(TOTAL_RUNING_TIME);
+		ExecutorService pool = Executors.newFixedThreadPool(TOTAL_RUNING_TIME);
 		
-		List<Future<Integer>> responseCodes = poll.invokeAll(callableList);
+		List<Future<Integer>> responseCodes = pool.invokeAll(callableList);
 		testresponseCode(responseCodes);
 	}
 
