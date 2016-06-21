@@ -37,7 +37,7 @@ public class LogUtils {
 	}
 	
 	private static String getTextMessage(String logLevel, String TAG, String content) {
-		return logLevel + SLASH + TAG + COLON + content;
+		return logLevel + SLASH + TAG + COLON + SPACE + content;
 	}
 	
 	private static String combineTimeAndTextMessage(String timeMessage, String textMessage) {
