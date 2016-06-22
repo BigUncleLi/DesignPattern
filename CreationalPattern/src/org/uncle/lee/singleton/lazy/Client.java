@@ -56,24 +56,31 @@ public class Client {
 		ExecutorService pool = Executors.newFixedThreadPool(TOTAL_RUNING_TIME);
 		
 		List<Future<Integer>> responseCodes = pool.invokeAll(callableList);
-		testresponseCode(responseCodes);
+		testresponseCode(responseCodes, pool);
 	}
 
-	private static void testresponseCode(List<Future<Integer>> responseCodes) throws InterruptedException, ExecutionException {
+	private static void testresponseCode(List<Future<Integer>> responseCodes, ExecutorService pool) 
+			throws InterruptedException, ExecutionException {
 		for(Future<Integer> future : responseCodes){
 			if(future.get() != CHECK_CODE){
-				showcheckFailureMessage(future.get());
+				showcheckFailureMessage(future.get(), pool);
 				return;
 			}
 		}
-		showCheckSuccessfulMessage();
+		showCheckSuccessfulMessage(pool);
 	}
 
-	private static void showcheckFailureMessage(Integer failureCode) {
+	private static void showcheckFailureMessage(Integer failureCode, ExecutorService pool) {
 		LogUtils.e(TAG, "check error, thread unsafe. Failure code : " + failureCode);
+		shutDownPool(pool);
+	}
+
+	private static void showCheckSuccessfulMessage(ExecutorService pool) {
+		LogUtils.d(TAG, "check success, thread safe");
+		shutDownPool(pool);
 	}
 	
-	private static void showCheckSuccessfulMessage() {
-		LogUtils.d(TAG, "check success, thread safe");
+	private static void shutDownPool(ExecutorService pool) {
+		pool.shutdown();
 	}
 }
