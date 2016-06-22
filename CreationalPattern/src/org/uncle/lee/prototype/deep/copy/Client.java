@@ -10,7 +10,16 @@ public class Client {
 		DeepPrototype deepPrototype = createDeepPrototype();
 		createCloneDeepPrototypeCatchException(deepPrototype);
 		
-		LogUtils.d(TAG, "innerObject : " + deepPrototype.getInnerObject().hashCode() + "-" + cloneDeepPrototype.getInnerObject().hashCode());
+		compareTwoInstance(deepPrototype.getValue(), cloneDeepPrototype.getValue(), "value");
+		compareTwoInstance(deepPrototype, cloneDeepPrototype, "prototype");
+		compareTwoInstance(deepPrototype.getInnerObject(), cloneDeepPrototype.getInnerObject(), "innerObject");
+	}
+	
+	private static DeepPrototype createDeepPrototype() {
+		DeepPrototype deepPrototype = new DeepPrototype();
+		deepPrototype.setValue(1);
+		deepPrototype.setInnerObject(deepPrototype.new InnerObject());
+		return deepPrototype;
 	}
 
 	private static void createCloneDeepPrototypeCatchException(DeepPrototype deepPrototype) {
@@ -24,11 +33,12 @@ public class Client {
 	private static DeepPrototype createCloneDeepPrototype(DeepPrototype deepPrototype) throws CloneNotSupportedException {
 		return deepPrototype.clone();
 	}
-
-	private static DeepPrototype createDeepPrototype() {
-		DeepPrototype deepPrototype = new DeepPrototype();
-		deepPrototype.setValue(1);
-		deepPrototype.setInnerObject(deepPrototype.new InnerObject());
-		return deepPrototype;
+	
+	private static <T> void compareTwoInstance(T t1, T t2, String name){
+		if(t1 != t2){
+			LogUtils.d(TAG, "two " + name + " is not the same");
+		}else {
+			LogUtils.d(TAG, "two " + name + " is the same");
+		}
 	}
 }
