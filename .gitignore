@@ -8,8 +8,6 @@ bin/
 *.class
 *~
 
-# eclipse setting/classpath files
+# eclipse setting files
 .settings/
-*.classpath
-*.project
 *.properties
