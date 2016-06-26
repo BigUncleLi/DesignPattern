@@ -1,5 +1,6 @@
 package org.uncle.lee.state;
 
+import org.uncle.lee.state.Context.ContextType;
 import org.uncle.lee.utils.LogUtils;
 
 public class ConcreteStateB implements State {
@@ -7,6 +8,11 @@ public class ConcreteStateB implements State {
 
 	@Override
 	public void handle(Context context) {
-		LogUtils.d(TAG, "last handle");
+		if(context.getType().equals(ContextType.TYPEB)){
+			LogUtils.d(TAG, "handle");
+		}else {
+			context.setState(new ConcreteStateC());
+			context.request();
+		}
 	}
 }

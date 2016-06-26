@@ -2,7 +2,7 @@ package org.uncle.lee.state;
 
 public class Context {
 	public enum ContextType{
-		TYPEA, TYPEB;
+		TYPEA, TYPEB, TYPEC;
 	}
 	
 	public Context(){

@@ -10,5 +10,8 @@ public class Client {
 		
 		context.setType(ContextType.TYPEB);
 		context.request();
+		
+		context.setType(ContextType.TYPEC);
+		context.request();
 	}
 }
