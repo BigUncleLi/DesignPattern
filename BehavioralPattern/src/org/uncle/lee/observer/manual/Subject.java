@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.uncle.lee.utils.LogUtils;
 
-public class Subect {
-	private static final String TAG = Subect.class.getSimpleName();
+public class Subject {
+	private static final String TAG = Subject.class.getSimpleName();
 	private List<Observer> observers;
 	
-	public Subect(){
+	public Subject(){
 		observers = new ArrayList<Observer>();
 	}
 	
@@ -70,6 +70,6 @@ public class Subect {
 	
 	public void opreate(){
 		LogUtils.d(TAG, "opreate");
-		notifyAll();
+		notifyAllObjects();
 	}
 }
