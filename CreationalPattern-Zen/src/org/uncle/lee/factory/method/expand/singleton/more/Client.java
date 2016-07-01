@@ -9,9 +9,9 @@ public class Client {
 		TestA aInstance1 = (TestA) factory.createInstance(TestA.class);
 		aInstance1.show();
 		
-		TestB bInstance0 = (TestB) factory.createInstance(TestB.class);
+		TestB bInstance0 = (TestB) factory.createInstance(TestB.class, "Hello Class b");
 		bInstance0.show();
-		TestB bInstance1 = (TestB) factory.createInstance(TestB.class);
+		TestB bInstance1 = (TestB) factory.createInstance(TestB.class, "We're friends now, lol");
 		bInstance1.show();
 	}
 }
