@@ -1,6 +1,9 @@
 package org.uncle.lee.proxy.force;
 
-public class GamePlayerProxy implements IGamePlayer{
+import org.uncle.lee.utils.LogUtils;
+
+public class GamePlayerProxy implements IGamePlayer, IProxy{
+	private static final String TAG = GamePlayerProxy.class.getSimpleName();
 	private IGamePlayer gamePlayer;
 	
 	public GamePlayerProxy(IGamePlayer gamePlayer){
@@ -20,10 +23,17 @@ public class GamePlayerProxy implements IGamePlayer{
 	@Override
 	public void upgrade() {
 		gamePlayer.upgrade();
+		this.payTheBill();
 	}
 
 	@Override
 	public IGamePlayer getProxy() {
 		return this;
+	}
+	
+
+	@Override
+	public void payTheBill() {
+		LogUtils.d(TAG, "pay 150 $");
 	}
 }
