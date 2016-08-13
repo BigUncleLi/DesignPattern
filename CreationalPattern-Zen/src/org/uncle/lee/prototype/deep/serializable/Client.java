@@ -13,7 +13,6 @@ public class Client {
 		LogUtils.d(TAG, "clone user : " + cloneMail.getUser().toString());
 	}
 
-	@Deprecated
 	private static Mail createMail() {
 		Mail mail = new Mail(new AdvTemplate());
 		setUser(mail);
