@@ -6,9 +6,9 @@ public interface ManagementOffice {
 	}
 	
 	public abstract void setPurchase(Purchase purchase);
-	public abstract void setSlaes(Slaes sales);
+	public abstract void setSlaes(Sales sales);
+	public abstract Sales getSlaes();
 	public abstract void setStock(Stock stock);
 	public abstract void request(RequestCode requestCode, int stockNumber);
-	public abstract void startPurchase();
-	public abstract void sale(int saleNumber);
+	public abstract void init();
 }

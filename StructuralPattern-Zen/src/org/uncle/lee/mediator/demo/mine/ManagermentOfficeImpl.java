@@ -5,7 +5,7 @@ import org.uncle.lee.utils.LogUtils;
 public class ManagermentOfficeImpl implements ManagementOffice{
 	private static final String TAG = ManagermentOfficeImpl.class.getSimpleName();
 	private Purchase purchase;
-	private Slaes sales;
+	private Sales sales;
 	private Stock stock;
 	
 	@Override
@@ -14,8 +14,13 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 	}
 
 	@Override
-	public void setSlaes(Slaes sales) {
+	public void setSlaes(Sales sales) {
 		this.sales = sales;
+	}
+	
+	@Override
+	public Sales getSlaes() {
+		return sales;
 	}
 
 	@Override
@@ -24,20 +29,8 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 	}
 
 	@Override
-	public void startPurchase() {
-		LogUtils.d(TAG, "init and startPurchase");
-		purchase.normalPurchase();
-	}
-
-	@Override
-	public void sale(int saleNumber) {
-		LogUtils.d(TAG, "sale : " + saleNumber);
-		sales.sale(saleNumber);
-	}
-
-	@Override
 	public void request(RequestCode requestCode, int stockNumber) {
-		LogUtils.d(TAG, "handle request : " + requestCode.toString() + "-" + stockNumber);
+		LogUtils.d(TAG, "handle "  + requestCode.toString() + " request : " + stockNumber);
 		if(RequestCode.addRequest.equals(requestCode)){
 			requestAddStock(stockNumber);
 		}else if(RequestCode.deleteRequest.equals(requestCode)){
@@ -53,5 +46,16 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 
 	private void requestDeleteStock(int deleteStock) {
 		stock.deleteStockNumber(deleteStock);
+	}
+
+	@Override
+	public void init() {
+		LogUtils.d(TAG, "init");
+		startPurchase();
+	}
+	
+	private void startPurchase() {
+		LogUtils.d(TAG, "startPurchase");
+		purchase.normalPurchase();
 	}
 }

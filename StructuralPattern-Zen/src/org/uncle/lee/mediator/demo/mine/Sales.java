@@ -3,8 +3,8 @@ package org.uncle.lee.mediator.demo.mine;
 import org.uncle.lee.mediator.demo.mine.ManagementOffice.RequestCode;
 import org.uncle.lee.utils.LogUtils;
 
-public class Slaes {
-	private static final String TAG = Slaes.class.getSimpleName();
+public class Sales {
+	private static final String TAG = Sales.class.getSimpleName();
 	private ManagementOffice managementOffice;
 	
 	public void setManagerOffice(ManagementOffice managementOffice){

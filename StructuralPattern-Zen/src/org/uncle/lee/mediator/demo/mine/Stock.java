@@ -18,7 +18,7 @@ public class Stock {
 		LogUtils.d(TAG, "current stock number : " + stockNumber);
 	}
 	
-	public int requestStockNumber(){
+	public int queryStockNumber(){
 		return stockNumber;
 	}
 }
