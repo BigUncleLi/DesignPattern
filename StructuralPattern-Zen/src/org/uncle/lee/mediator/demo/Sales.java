@@ -1,6 +1,6 @@
-package org.uncle.lee.mediator.demo.mine;
+package org.uncle.lee.mediator.demo;
 
-import org.uncle.lee.mediator.demo.mine.ManagementOffice.RequestCode;
+import org.uncle.lee.mediator.demo.ManagementOffice.RequestCode;
 import org.uncle.lee.utils.LogUtils;
 
 public class Sales {

@@ -1,4 +1,4 @@
-package org.uncle.lee.mediator.demo.mine;
+package org.uncle.lee.mediator.demo;
 
 import org.uncle.lee.utils.LogUtils;
 

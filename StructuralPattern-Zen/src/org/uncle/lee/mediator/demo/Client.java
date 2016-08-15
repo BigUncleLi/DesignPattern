@@ -1,4 +1,4 @@
-package org.uncle.lee.mediator.demo.mine;
+package org.uncle.lee.mediator.demo;
 
 public class Client {
 	private static final int SALE_NUMBER_LITTLE = 1;

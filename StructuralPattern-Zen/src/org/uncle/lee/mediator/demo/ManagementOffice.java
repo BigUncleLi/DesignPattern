@@ -1,4 +1,4 @@
-package org.uncle.lee.mediator.demo.mine;
+package org.uncle.lee.mediator.demo;
 
 public interface ManagementOffice {
 	public enum RequestCode{
