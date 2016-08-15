@@ -6,13 +6,13 @@ public class Stock {
 	private static final String TAG = Stock.class.getSimpleName();
 	private int stockNumber;
 	
-	public void deleteStockNumber(int deleteNumber){
+	public synchronized void deleteStockNumber(int deleteNumber){
 		LogUtils.d(TAG, "origin stock number : " + stockNumber + ", deleteStockNumber : " + deleteNumber);
 		stockNumber -= deleteNumber;
 		LogUtils.d(TAG, "current stock number : " + stockNumber);
 	}
 	
-	public void addStockNumber(int addNumber){
+	public synchronized void addStockNumber(int addNumber){
 		LogUtils.d(TAG, "origin stock number : " + stockNumber + ", addStockNumber : " + addNumber);
 		stockNumber += addNumber;
 		LogUtils.d(TAG, "current stock number : " + stockNumber);

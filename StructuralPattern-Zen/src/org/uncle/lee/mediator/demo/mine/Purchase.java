@@ -1,5 +1,8 @@
 package org.uncle.lee.mediator.demo.mine;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import org.uncle.lee.mediator.demo.mine.ManagementOffice.RequestCode;
 import org.uncle.lee.utils.LogUtils;
 
@@ -7,19 +10,52 @@ public class Purchase {
 	private static final String TAG = Purchase.class.getSimpleName();
 	private static final int NORMAL_PURCHASE_NUMBER = 10;
 	private static final int URGENT_PURCHASE_NUMBER = NORMAL_PURCHASE_NUMBER * 3;
+	private static final int NORMAL_PURCHASE_CYCLE = 1000 * 3;
+	private static final int URGENT_PURCHASE_CYCLE = 1000 * 2;
+	private static final String NORMAL_PURCHASE_RUNNABLE_NAME = "normalPurchaseTask"; 
+	private static final String URGENT_PURCHASE_RUNNABLE_NAME = "urgentPurechaseTask";
+	
 	private ManagementOffice managementOffice;
+	private Timer normalPurchaseTimer;
+	private Timer urgentPurchaseTimer;
 	
 	public void setManagerOffice(ManagementOffice managementOffice){
 		this.managementOffice = managementOffice;
 	}
 	
-	public void normalPurchase(){
-		LogUtils.d(TAG, "normalPurchase : " + NORMAL_PURCHASE_NUMBER);
-		requestAddStock(NORMAL_PURCHASE_NUMBER);
+	public void startNormalPurchase(){
+		LogUtils.d(TAG, "start normalPurchase");
+		normalPurchaseTimer = new Timer(NORMAL_PURCHASE_RUNNABLE_NAME);
+		normalPurchaseTimer.schedule(normalPurchaseTimerTask, 0, NORMAL_PURCHASE_CYCLE);
 	}
 	
-	public void urgentPurchase(){
-		requestAddStock(URGENT_PURCHASE_NUMBER);
+	private TimerTask normalPurchaseTimerTask = new TimerTask() {
+		@Override
+		public void run() {
+			requestAddStock(NORMAL_PURCHASE_NUMBER);
+		}
+	};
+	
+	public void stopNormalPurechase(){
+		normalPurchaseTimer.cancel();
+	}
+	
+	public void startUrgentPurchase(){
+		LogUtils.d(TAG, "start urgentPurchase");
+		urgentPurchaseTimer = new Timer(URGENT_PURCHASE_RUNNABLE_NAME);
+		urgentPurchaseTimer.schedule(urgentPurchaseTimerTask, 0, URGENT_PURCHASE_CYCLE);
+	}
+	
+	private TimerTask urgentPurchaseTimerTask = new TimerTask() {
+		@Override
+		public void run() {
+			requestAddStock(URGENT_PURCHASE_NUMBER);
+		}
+	};
+
+	
+	public void stopUrgentPurchase(){
+		urgentPurchaseTimer.cancel();
 	}
 	
 	public void purchase(int purchaseNumber){

@@ -83,6 +83,6 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 	
 	private void startPurchase() {
 		LogUtils.d(TAG, "startPurchase");
-		purchase.normalPurchase();
+		purchase.startNormalPurchase();
 	}
 }
