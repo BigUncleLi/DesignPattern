@@ -61,6 +61,7 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 		if(currentStock < deleteStock){
 			LogUtils.d(TAG, "current stock less than delete stock !");
 			orderToPurchase(deleteStock - currentStock);
+			changePurchaseModel();
 		}
 	}
 	
@@ -68,6 +69,11 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 	private void orderToPurchase(int needNumber) {
 		LogUtils.d(TAG, "order to purchase");
 		purchase.purchase(needNumber);
+	}
+	
+	private void changePurchaseModel() {
+		LogUtils.d(TAG, "change purchase model");
+		purchase.startUrgentPurchase();
 	}
 
 	private void doDeleteStockNumber(int deleteStock) {

@@ -16,8 +16,8 @@ public class Purchase {
 	private static final String URGENT_PURCHASE_RUNNABLE_NAME = "urgentPurechaseTask";
 	
 	private ManagementOffice managementOffice;
-	private Timer normalPurchaseTimer;
-	private Timer urgentPurchaseTimer;
+	private Timer normalPurchaseTimer = new Timer(NORMAL_PURCHASE_RUNNABLE_NAME);;
+	private Timer urgentPurchaseTimer = new Timer(URGENT_PURCHASE_RUNNABLE_NAME);;
 	
 	public void setManagerOffice(ManagementOffice managementOffice){
 		this.managementOffice = managementOffice;
@@ -25,6 +25,7 @@ public class Purchase {
 	
 	public void startNormalPurchase(){
 		LogUtils.d(TAG, "start normalPurchase");
+		stopUrgentPurchase();
 		normalPurchaseTimer = new Timer(NORMAL_PURCHASE_RUNNABLE_NAME);
 		normalPurchaseTimer.schedule(normalPurchaseTimerTask, 0, NORMAL_PURCHASE_CYCLE);
 	}
@@ -36,12 +37,13 @@ public class Purchase {
 		}
 	};
 	
-	public void stopNormalPurechase(){
+	private void stopNormalPurechase(){
 		normalPurchaseTimer.cancel();
 	}
 	
 	public void startUrgentPurchase(){
 		LogUtils.d(TAG, "start urgentPurchase");
+		stopNormalPurechase();
 		urgentPurchaseTimer = new Timer(URGENT_PURCHASE_RUNNABLE_NAME);
 		urgentPurchaseTimer.schedule(urgentPurchaseTimerTask, 0, URGENT_PURCHASE_CYCLE);
 	}
@@ -54,7 +56,7 @@ public class Purchase {
 	};
 
 	
-	public void stopUrgentPurchase(){
+	private void stopUrgentPurchase(){
 		urgentPurchaseTimer.cancel();
 	}
 	
