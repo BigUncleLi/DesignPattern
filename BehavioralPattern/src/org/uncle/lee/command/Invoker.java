@@ -1,4 +1,4 @@
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 import java.util.ArrayList;
 import java.util.List;

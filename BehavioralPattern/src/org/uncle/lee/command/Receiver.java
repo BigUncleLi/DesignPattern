@@ -1,4 +1,4 @@
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 import org.uncle.lee.utils.LogUtils;
 

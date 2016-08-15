@@ -1,4 +1,4 @@
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 public class Client {
 	public static void main(String[] args) {

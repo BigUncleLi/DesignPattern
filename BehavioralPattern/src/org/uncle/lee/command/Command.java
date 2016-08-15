@@ -1,4 +1,4 @@
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 public abstract class Command {
 	private Receiver receiver;

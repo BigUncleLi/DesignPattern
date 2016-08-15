@@ -1,5 +1,5 @@
 
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 public class ConcreteCommandA extends Command {
 	public ConcreteCommandA(Receiver receiver) {

@@ -1,4 +1,4 @@
-package org.uncle.lee.chainof.command;
+package org.uncle.lee.command;
 
 public class ConcreteCommandB extends Command {
 
