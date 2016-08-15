@@ -45,6 +45,33 @@ public class ManagermentOfficeImpl implements ManagementOffice{
 	}
 
 	private void requestDeleteStock(int deleteStock) {
+		LogUtils.d(TAG, "delete stock number is : " + deleteStock);
+		int currentStock = queryCurrentStock();
+		checkStock(deleteStock, currentStock);
+		doDeleteStockNumber(deleteStock);
+	}
+
+	private int queryCurrentStock() {
+		int currentStockNumber = stock.queryStockNumber();
+		LogUtils.d(TAG, "query current stock number : " + currentStockNumber);
+		return currentStockNumber;
+	}
+
+	private void checkStock(int deleteStock, int currentStock) {
+		if(currentStock < deleteStock){
+			LogUtils.d(TAG, "current stock less than delete stock !");
+			orderToPurchase(deleteStock - currentStock);
+		}
+	}
+	
+
+	private void orderToPurchase(int needNumber) {
+		LogUtils.d(TAG, "order to purchase");
+		purchase.purchase(needNumber);
+	}
+
+	private void doDeleteStockNumber(int deleteStock) {
+		LogUtils.d(TAG, "do delete stock number");
 		stock.deleteStockNumber(deleteStock);
 	}
 
