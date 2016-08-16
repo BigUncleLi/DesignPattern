@@ -8,6 +8,10 @@ public class HusbandHandler extends BaseHandler {
 	private static final String TAG = HusbandHandler.class.getSimpleName();
 	private final CurrentBoss my = CurrentBoss.husband;
 
+	public HusbandHandler(int priority) {
+		super(priority);
+	}
+	
 	@Override
 	public void doHandle(Request request) {
 		LogUtils.d(TAG, request.getRequestContent() + " | pass");
@@ -15,6 +19,16 @@ public class HusbandHandler extends BaseHandler {
 
 	@Override
 	public boolean needHandle(Request request) {
-		return request.getCurrentBoss().equals(my);
+		boolean need = request.getCurrentBoss().equals(my);
+		showNeedHandle(need);
+		return need;
+	}
+	
+	private void showNeedHandle(boolean need) {
+		if(need){
+			LogUtils.d(TAG, "check success, I'll handle it");
+		} else {
+			LogUtils.d(TAG, "check fail, trun to next");
+		}
 	}
 }
