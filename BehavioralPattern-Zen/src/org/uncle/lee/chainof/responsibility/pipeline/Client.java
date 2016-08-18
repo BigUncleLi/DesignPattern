@@ -15,7 +15,7 @@ public class Client {
 
 	private static Request createRequest() {
 		Request request = new Request();
-		request.setCurrentBoss(CurrentBoss.father);
+		request.setCurrentBoss(CurrentBoss.son);
 		request.setRequestContent("I want to go shopping");
 		return request;
 	}

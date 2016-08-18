@@ -6,7 +6,6 @@ import org.uncle.lee.utils.LogUtils;
 
 public class OtherManHandler extends BaseHandler {
 	private static final String TAG = OtherManHandler.class.getSimpleName();
-	private final CurrentBoss my = CurrentBoss.otherMan;
 
 	public OtherManHandler(int priority) {
 		super(priority);
@@ -18,18 +17,7 @@ public class OtherManHandler extends BaseHandler {
 	}
 
 	@Override
-	public boolean needHandle(Request request) {
-		boolean need = request.getCurrentBoss().equals(my);
-		showNeedHandle(need);
-		return need;
+	public CurrentBoss initCurrentBoss() {
+		return CurrentBoss.otherMan;
 	}
-	
-	private void showNeedHandle(boolean need) {
-		if(need){
-			LogUtils.d(TAG, "check success, I'll handle it");
-		} else {
-			LogUtils.d(TAG, "check fail, trun to next");
-		}
-	}
-
 }
