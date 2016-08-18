@@ -2,6 +2,8 @@ package org.uncle.lee.chainof.responsibility.pipeline.Handler;
 
 import org.uncle.lee.chainof.responsibility.pipeline.request.Request;
 import org.uncle.lee.chainof.responsibility.pipeline.request.Request.CurrentBoss;
+import org.uncle.lee.chainof.responsibility.pipeline.response.Response;
+import org.uncle.lee.chainof.responsibility.pipeline.response.ResponseListener;
 import org.uncle.lee.utils.LogUtils;
 
 public class HusbandHandler extends BaseHandler {
@@ -10,10 +12,17 @@ public class HusbandHandler extends BaseHandler {
 	public HusbandHandler(int priority) {
 		super(priority);
 	}
-	
+
 	@Override
-	public void doHandle(Request request) {
-		LogUtils.d(TAG, request.getRequestContent() + " | pass");
+	public void doHandle(Request request, ResponseListener responseListener) {
+		LogUtils.d(TAG, "doHandle" + request.getRequestContent());
+		doResponse(request, responseListener);
+	}
+
+	private void doResponse(Request request, ResponseListener responseListener) {
+		Response response = new Response(request.getRequestContent() + " | "
+				+ super.my.toString() + " | pass");
+		responseListener.onResponse(response);
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import org.uncle.lee.chainof.responsibility.pipeline.Handler.Handler;
 import org.uncle.lee.chainof.responsibility.pipeline.context.Context;
 import org.uncle.lee.chainof.responsibility.pipeline.context.Pipeline;
 import org.uncle.lee.chainof.responsibility.pipeline.request.Request;
+import org.uncle.lee.chainof.responsibility.pipeline.response.ResponseListener;
 
 public abstract class Morality {
 	protected Context context;
@@ -16,13 +17,13 @@ public abstract class Morality {
 
 	protected abstract Context initContext();
 	
-	public void handleRequest(Request request){
+	public void handleRequest(Request request, ResponseListener responseListener){
 		Pipeline pipeline = context.pipeline();
 		Iterator<Handler> iterator = pipeline.iterator();
 		
 		while(iterator.hasNext()){
 			Handler next = iterator.next();
-			if(next.handleRequest(request)){
+			if(next.handleRequest(request, responseListener)){
 				break;
 			}
 		}

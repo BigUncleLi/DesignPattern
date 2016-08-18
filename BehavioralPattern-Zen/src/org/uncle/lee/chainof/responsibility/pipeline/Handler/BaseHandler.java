@@ -2,20 +2,21 @@ package org.uncle.lee.chainof.responsibility.pipeline.Handler;
 
 import org.uncle.lee.chainof.responsibility.pipeline.request.Request;
 import org.uncle.lee.chainof.responsibility.pipeline.request.Request.CurrentBoss;
+import org.uncle.lee.chainof.responsibility.pipeline.response.ResponseListener;
 import org.uncle.lee.utils.LogUtils;
 
 public abstract class BaseHandler implements Handler, Comparable<BaseHandler> {
 	private int priority;
-	private CurrentBoss my;
+	protected CurrentBoss my;
 
 	public BaseHandler(int priority) {
 		this.priority = priority;
 		my = initCurrentBoss();
 	}
 
-	public boolean handleRequest(Request request) {
+	public boolean handleRequest(Request request, ResponseListener responseListener) {
 		if (needHandle(request)) {
-			doHandle(request);
+			doHandle(request, responseListener);
 			return true;
 		} else {
 			return false;
@@ -43,5 +44,5 @@ public abstract class BaseHandler implements Handler, Comparable<BaseHandler> {
 
 
 	public abstract CurrentBoss initCurrentBoss();
-	public abstract void doHandle(Request request);
+	public abstract void doHandle(Request request, ResponseListener responseListener);
 }
