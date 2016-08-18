@@ -28,9 +28,10 @@ public abstract class Handler {
 		return null;
 	}
 
+	public void setNext(Handler handler){
+		this.nextHandler = handler;
+	}
+	
 	public abstract Response echo(Request request);
-
-	public abstract void setNext(Handler handler);
-
 	public abstract Level getLevel();
 }

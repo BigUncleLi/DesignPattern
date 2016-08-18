@@ -2,8 +2,8 @@ package org.uncle.lee.chainof.responsibility.origin;
 
 import org.uncle.lee.utils.LogUtils;
 
-public class ConcreteHandlerA extends Handler{
-	private static final String TAG = ConcreteHandlerA.class.getSimpleName();
+public class ConcreteHandlerC extends Handler{
+	private static final String TAG = ConcreteHandlerC.class.getSimpleName();
 
 	@Override
 	public Response echo(Request request) {
@@ -13,7 +13,7 @@ public class ConcreteHandlerA extends Handler{
 
 	@Override
 	public Level getLevel() {
-		return Level.levelA;
+		return Level.levelc;
 	}
 
 }

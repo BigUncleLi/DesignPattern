@@ -1,5 +1,5 @@
 package org.uncle.lee.chainof.responsibility.origin;
 
-public class Level {
-
+public enum Level {
+	levelA, levelB, levelc;
 }
