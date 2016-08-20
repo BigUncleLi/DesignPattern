@@ -1,5 +1,6 @@
 package org.uncle.lee.decorator.demo.inherit;
 
+import org.uncle.lee.decorator.demo.MyReport;
 import org.uncle.lee.utils.LogUtils;
 
 public class F21MyReport extends MyReport {

@@ -1,5 +1,7 @@
 package org.uncle.lee.decorator.demo.inherit;
 
+import org.uncle.lee.decorator.demo.SchoolReport;
+
 public class Client {
 	public static void main(String[] args) {
 		testF1();
