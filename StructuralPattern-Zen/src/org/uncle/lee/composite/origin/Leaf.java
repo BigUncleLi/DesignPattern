@@ -17,15 +17,22 @@ public class Leaf implements Component{
 		LogUtils.d(TAG, "operate ...");
 	}
 
+	@Deprecated
 	@Override
-	public void addChild(Component component) {}
+	public void addChild(Component component) {
+		throw new UnsupportedOperationException();
+	}
 
+	@Deprecated
 	@Override
-	public void remove(Component component) {}
+	public void remove(Component component) {
+		throw new UnsupportedOperationException();
+	}
 
+	@Deprecated
 	@Override
 	public List<Component> getChildren() {
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

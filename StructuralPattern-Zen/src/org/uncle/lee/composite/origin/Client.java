@@ -13,6 +13,9 @@ public class Client {
 		Leaf vp = new Leaf("VP");
 		ceo.addChild(vp);
 
+		//this sentence will throw UnsupportedOperatorException
+		//vp.addChild(ceo);
+
 		Composite coo = new Composite("COO");
 		chairman.addChild(coo);
 
