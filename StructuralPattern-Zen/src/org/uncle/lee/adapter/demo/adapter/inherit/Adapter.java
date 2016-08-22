@@ -1,4 +1,4 @@
-package org.uncle.lee.adapter.demo.adapter;
+package org.uncle.lee.adapter.demo.adapter.inherit;
 
 import org.uncle.lee.adapter.demo.ConcreteRemoteUser;
 import org.uncle.lee.adapter.demo.LocalUser;
