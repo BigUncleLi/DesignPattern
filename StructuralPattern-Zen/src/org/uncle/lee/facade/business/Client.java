@@ -1,4 +1,4 @@
-package org.uncle.lee.facade.origin.business;
+package org.uncle.lee.facade.business;
 
 public class Client {
 	public static void main(String[] args) {

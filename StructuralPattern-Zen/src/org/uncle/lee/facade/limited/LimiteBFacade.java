@@ -1,4 +1,4 @@
-package org.uncle.lee.facade.origin.limited;
+package org.uncle.lee.facade.limited;
 
 import org.uncle.lee.facade.origin.Facade;
 
