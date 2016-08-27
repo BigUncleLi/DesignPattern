@@ -16,18 +16,18 @@ public class Originator {
 		this.stateA = stateA;
 	}
 	
-	public IMementor createMementor(){
-		return new Mementor(this.getStateA());
+	public IMemento createMemento(){
+		return new Memento(this.getStateA());
 	}
 
-	public void resetMementor(IMementor mementor){
-		this.setStateA(((Mementor) mementor).getStateA());
+	public void resetMemento(IMemento memento){
+		this.setStateA(((Memento) memento).getStateA());
 	}
 	
-	private class Mementor implements IMementor {
+	private class Memento implements IMemento {
 		private String stateA;
 		
-		public Mementor(String stateA){
+		public Memento(String stateA){
 			this.stateA = stateA;
 		}
 

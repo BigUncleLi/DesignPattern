@@ -20,7 +20,7 @@ public class Client {
 	
 	private static CareTaker createCareTaker(Originator originator) {
 		CareTaker careTaker = new CareTaker();
-		careTaker.setMementor(originator.createMementor());
+		careTaker.setMemento(originator.createMemento());
 		return careTaker;
 	}
 	
@@ -34,6 +34,6 @@ public class Client {
 	
 
 	private static void doRollback(Originator originator, CareTaker careTaker) {
-		originator.resetMementor(careTaker.getMementor());
+		originator.resetMemento(careTaker.getMemento());
 	}
 }

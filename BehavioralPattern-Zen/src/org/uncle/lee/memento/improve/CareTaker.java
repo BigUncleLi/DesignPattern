@@ -1,14 +1,14 @@
 package org.uncle.lee.memento.improve;
 
 public class CareTaker {
-	public IMementor mementor;
+	public IMemento memento;
 
-	public IMementor getMementor() {
-		return mementor;
+	public IMemento getMemento() {
+		return memento;
 	}
 
-	public void setMementor(IMementor mementor) {
-		this.mementor = mementor;
+	public void setMemento(IMemento mementor) {
+		this.memento = mementor;
 	}
 
 }
