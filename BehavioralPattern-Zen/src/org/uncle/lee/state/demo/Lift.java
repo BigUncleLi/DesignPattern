@@ -1,4 +1,4 @@
-package org.uncle.lee.state.demo.basic;
+package org.uncle.lee.state.demo;
 
 public interface Lift {
 	public abstract void openDoor();

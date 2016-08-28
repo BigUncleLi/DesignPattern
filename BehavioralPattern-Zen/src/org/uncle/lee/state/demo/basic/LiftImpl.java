@@ -1,5 +1,6 @@
 package org.uncle.lee.state.demo.basic;
 
+import org.uncle.lee.state.demo.Lift;
 import org.uncle.lee.utils.LogUtils;
 
 /**
