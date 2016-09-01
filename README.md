@@ -60,3 +60,23 @@ Here is an introduction for project structure.
 		* Singleton pattern
 			* extensions for multiple instances
 		* Builder pattern
+	* StructuralPattern
+		* Adapter pattern
+		* Bridge pattern
+		* Composite pattern
+		* Decorator pattern
+		* Facade pattern
+		* Flyweight pattern
+		* Proxy pattern
+	* BehavioralPattern
+		* Command pattern
+		* Chain of responsibility pattern
+		* Interpreter pattern
+		* Iterator pattern
+		* Mediator pattern
+		* Memento pattern
+		* Observer pattern
+		* State pattern
+		* Strategy pattern
+		* Template method pattern
+		* Visitor pattern
