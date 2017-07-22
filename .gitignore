@@ -11,3 +11,6 @@ bin/
 # eclipse setting files
 .settings/
 *.properties
+
+# iOS file
+.DS_store
