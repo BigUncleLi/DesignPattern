@@ -1,11 +1,7 @@
 package structural.proxy
 
-class Proxy : Subject {
-    private var realSubject : Subject? = null
-
-    constructor(realSubject: Subject) {
-        this.realSubject = realSubject
-    }
+class Proxy(realSubject: RealSubject) : Subject {
+    private var realSubject : Subject? = realSubject
 
     private fun doFirst() {
         println("Proxy do first ...")
