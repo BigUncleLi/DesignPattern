@@ -16,6 +16,8 @@ fun buildOriginProduct() {
     println(buildBProduct(director))
     val product = director.constuct(ConcreateBudilerA())
     println(product)
+
+    testBt0()
 }
 
 fun buildAProduct(director: Director): Product {
@@ -34,4 +36,13 @@ fun buildBtProduct() {
             .featureB("b")
             .featureC("c")
             .build())
+}
+
+fun testBt0() {
+    val product = creational.builder.bt0.Product.Builder
+            .featureA("feature a")
+            .featureB("feature b")
+            .featureC("feature c")
+            .build()
+    print(product)
 }
