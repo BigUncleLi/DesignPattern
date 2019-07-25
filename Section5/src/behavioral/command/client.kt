@@ -3,8 +3,8 @@ package behavioral.command
 fun main(args: Array<String>) {
     val receiver = Receiver()
 
-    val commandA : Command = ConcreateCommandA(receiver)
-    val commandB : Command = ConcreateCommandB(receiver)
+    val commandA : Command = ConcreteCommandA(receiver)
+    val commandB : Command = ConcreteCommandB(receiver)
 
     val invoke = Invoker()
     invoke.addCommand(commandA)
