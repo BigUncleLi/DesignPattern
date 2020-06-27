@@ -9,8 +9,14 @@ public class Factory {
 
     private Factory() {}
 
-    public static synchronized Factory instance() {
-        if (instance == null) instance = new Factory();
+    public static Factory instance() {
+        if (instance == null) {
+            synchronized (Factory.class) {
+                if (instance == null) {
+                    instance = new Factory();
+                }
+            }
+        }
         return instance;
     }
 

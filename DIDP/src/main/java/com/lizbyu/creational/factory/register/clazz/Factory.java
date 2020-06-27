@@ -10,9 +10,13 @@ public final class Factory {
 
     private Factory() {}
 
-    public static synchronized Factory instance() {
+    public static Factory instance() {
         if (instance == null) {
-            instance = new Factory();
+            synchronized (Factory.class) {
+                if (instance == null) {
+                    instance = new Factory();
+                }
+            }
         }
         return instance;
     }
