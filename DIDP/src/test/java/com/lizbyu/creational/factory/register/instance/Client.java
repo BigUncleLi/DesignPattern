@@ -9,17 +9,17 @@ public class Client {
 
     @Before
     public void setUp() throws Exception {
-        Class.forName("com.lizbyu.creational.factory.register.instance.ProductA");
-        Class.forName("com.lizbyu.creational.factory.register.instance.ProductB");
+        Class.forName("com.lizbyu.creational.factory.register.instance.ConcreteProductA");
+        Class.forName("com.lizbyu.creational.factory.register.instance.ConcreteProductB");
     }
 
     @Test
     public void testMain() {
-        Product productA = Factory.instance().createProduct("ProductA");
-        assertTrue(productA instanceof ProductA);
-        Product productB = Factory.instance().createProduct("ProductB");
-        assertTrue(productB instanceof ProductB);
-        Product productB2 = Factory.instance().createProduct("ProductB");
+        Product productA = Factory.instance().createProduct("ConcreteProductA");
+        assertTrue(productA instanceof ConcreteProductA);
+        Product productB = Factory.instance().createProduct("ConcreteProductB");
+        assertTrue(productB instanceof ConcreteProductB);
+        Product productB2 = Factory.instance().createProduct("ConcreteProductB");
         assertNotSame(productB, productB2);
     }
 }

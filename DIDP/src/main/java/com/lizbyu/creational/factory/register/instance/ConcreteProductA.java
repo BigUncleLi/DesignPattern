@@ -1,14 +1,14 @@
 package com.lizbyu.creational.factory.register.instance;
 
-public class ProductB implements Product {
+public class ConcreteProductA implements Product {
 
     static {
-        Factory.instance().registerProduct("ProductB", new ProductB());
+        Factory.instance().registerProduct("ConcreteProductA", new ConcreteProductA());
     }
 
     @Override
     public Product createProduct() {
-        return new ProductB();
+        return new ConcreteProductA();
     }
 
     @Override
