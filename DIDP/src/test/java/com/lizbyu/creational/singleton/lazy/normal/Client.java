@@ -1,5 +1,6 @@
-package com.lizbyu.creational.singleton.simple;
+package com.lizbyu.creational.singleton.lazy.normal;
 
+import com.lizbyu.creational.singleton.lazy.normal.Singleton;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

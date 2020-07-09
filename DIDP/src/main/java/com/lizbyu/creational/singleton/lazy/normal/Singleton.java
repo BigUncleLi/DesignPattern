@@ -1,4 +1,4 @@
-package com.lizbyu.creational.singleton.lazy;
+package com.lizbyu.creational.singleton.lazy.normal;
 
 import java.io.Serializable;
 
