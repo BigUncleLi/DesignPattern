@@ -1,5 +1,6 @@
-package com.lizbyu.creational.prototype;
+package com.lizbyu.creational.prototype.shallow;
 
+import com.lizbyu.creational.prototype.shallow.Prototype;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

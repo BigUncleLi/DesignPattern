@@ -1,4 +1,4 @@
-package com.lizbyu.creational.prototype;
+package com.lizbyu.creational.prototype.shallow;
 
 public class Prototype implements Cloneable {
     private int intValue;
