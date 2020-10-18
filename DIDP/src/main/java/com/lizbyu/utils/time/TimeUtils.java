@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeUtils {
+    private TimeUtils() {}
+
     public static String getCurrentTime(){
         Date currentTime = new Date();
         DateFormat format = new SimpleDateFormat("MM-dd HH:mm:ss:SSS");

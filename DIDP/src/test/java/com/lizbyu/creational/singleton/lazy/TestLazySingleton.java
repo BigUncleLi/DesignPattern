@@ -1,14 +1,13 @@
-package com.lizbyu.creational.singleton.lazy.noob;
+package com.lizbyu.creational.singleton.lazy;
 
-import com.lizbyu.creational.singleton.lazy.noob.Singleton;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Client {
+public class TestLazySingleton {
 
     @Test
-    public void testMain() {
+    public void test() {
         Singleton instance = Singleton.instance();
         for (int i = 0; i < 10; i++) {
             Singleton instanceTemp = Singleton.instance();

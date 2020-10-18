@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Client {
+public class TestEarlySingleton {
 
     @Test
-    public void testMain() {
+    public void test() {
         Singleton instance = Singleton.instance();
         for (int i = 0; i < 10; i++) {
             Singleton instanceTemp = Singleton.instance();

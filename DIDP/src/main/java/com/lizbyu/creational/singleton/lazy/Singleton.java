@@ -1,9 +1,9 @@
-package com.lizbyu.creational.singleton.lazy.normal;
+package com.lizbyu.creational.singleton.lazy;
 
 import java.io.Serializable;
 
 public class Singleton implements Serializable {
-    private static Singleton instance;
+    private static volatile Singleton instance;
 
     private Singleton() {}
 
@@ -17,9 +17,6 @@ public class Singleton implements Serializable {
         }
         return instance;
     }
-
-    @SuppressWarnings("unused")
-    public void doSomething() {}
 
     protected Object readResolve() {
         return instance();

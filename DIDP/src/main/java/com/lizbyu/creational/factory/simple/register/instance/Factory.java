@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Factory {
-    public static Factory instance;
+    private static volatile Factory instance;
     private final Map<String, Product> registeredProduct = new HashMap<>();
 
     private Factory() {}

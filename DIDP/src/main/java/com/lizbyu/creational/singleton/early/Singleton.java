@@ -11,9 +11,6 @@ public class Singleton implements Serializable {
         return instance;
     }
 
-    @SuppressWarnings("unused")
-    public void doSomething() {}
-
     protected Object readResolve() {
         return instance();
     }

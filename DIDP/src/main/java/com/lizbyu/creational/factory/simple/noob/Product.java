@@ -1,10 +1,10 @@
 package com.lizbyu.creational.factory.simple.noob;
 
-@SuppressWarnings("unused")
 public interface Product {
     void operate();
+
+    enum Type {
+        ONE, TWO
+    }
 }
 
-enum ProductType {
-    ONE, TWO
-}
